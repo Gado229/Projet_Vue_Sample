@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="sample.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!-- Importing Vue.js with the following description -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- v-model="name" synchronizes the date set in Vue.js with the input element in HTML. -->
+            Name：<input v-model="name" placeholder="name">
+            Course：<input v-model="course" placeholder="course">
+            Term of study：<input v-model="acceptancePeriod" placeholder="period">
+            <br>
+            <!-- button v-on:click="addStudent"で、buttonがclickされた時に起動するメソッドを選択する -->
+            <button v-on:click="addStudent">Add the entered student</button>
+
+            <ul>
+                <!-- v-for="student in students" to cut out the array students one by one and assign them to the variable student -->
+                <!-- v-bind:key="student.id" is used to ensure uniqueness of each element cut out -->
+                <li v-for="student in students" v-bind:key="student.id">
+                    <!-- {{ }} The data in Vue.js can be expanded into expressions by using the statements written in the -->
+                    ID {{student.id}} /
+                    Name {{student.name}} /
+                    course {{student.course}} /
+                    Term of study {{student.acceptancePeriod}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="sample.js"></script>
+    </body>
+</html>
